@@ -17,6 +17,8 @@ The steps of project implementation:
 
 ![Image-02-Plugin-Jax-ws](images/Image-02-Plugin-Jax-ws.png)
 
+2. In `src/main/resources`, create `countries.xsd` file for Country definitions.
+
 
 ## References
 Spring - Guides - Producing a SOAP web service:

@@ -17,6 +17,8 @@ As etapas de desenvolvimento do projeto foram:
 
 ![Image-02-Plugin-Jax-ws](images/Image-02-Plugin-Jax-ws.png)
 
+2. Em `src/main/resources`, criar arquivo `countries.xsd` para as definições para Country.
+
 
 ## Referências
 Spring - Guides - Producing a SOAP web service:
