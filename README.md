@@ -65,6 +65,10 @@ The steps of project implementation:
 </project>
 ```
 
+4. Create `Country` and `Currency` classes using the Maven plugin (or GPT chat):
+
+![Image-04-UML-Classes-Country-Currency](images/Image-04-UML-Classes-Country-Currency.png)
+
 
 ## References
 Spring - Guides - Producing a SOAP web service:
