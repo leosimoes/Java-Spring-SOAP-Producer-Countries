@@ -19,6 +19,26 @@ The steps of project implementation:
 
 2. In `src/main/resources`, create `countries.xsd` file for Country definitions.
 
+3. In `pom.xml` add the dependencies and the plugin:
+
+```xml
+<dependency>
+    <groupId>wsdl4j</groupId>
+    <artifactId>wsdl4j</artifactId>
+    <version>1.6.3</version>
+</dependency>
+<dependency>
+    <groupId>jakarta.xml.bind</groupId>
+    <artifactId>jakarta.xml.bind-api</artifactId>
+    <version>4.0.2</version>
+</dependency>
+<dependency>
+    <groupId>org.glassfish.jaxb</groupId>
+    <artifactId>jaxb-runtime</artifactId>
+    <version>4.0.5</version>
+</dependency>
+```
+
 
 ## References
 Spring - Guides - Producing a SOAP web service:
