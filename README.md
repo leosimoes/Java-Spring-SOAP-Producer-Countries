@@ -65,9 +65,9 @@ The steps of project implementation:
 </project>
 ```
 
-4. Create `Country` and `Currency` classes using the Maven plugin (or GPT chat):
+4. Create classes `Country`, `Currency`, `GetCountryRequest` and `GetCountryResponse` using the Maven plugin (or GPT chat):
 
-![Image-04-UML-Classes-Country-Currency](images/Image-04-UML-Classes-Country-Currency.png)
+![Image-04-UML-Classes-Country-Currency-Request-Response](images/Image-04-UML-Classes-Country-Currency-Request-Response.png)
 
 5. Create class `CountryInMemoryRepository`:
 - with the static attribute `countriesMap`;

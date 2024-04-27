@@ -65,9 +65,9 @@ As etapas de desenvolvimento do projeto foram:
 </project>
 ```
 
-4. Criar classes `Country` e `Currency` usando o plugin do Maven (ou chat GPT):
+4. Criar classes `Country`, `Currency`, `GetCountryRequest` e `GetCountryResponse` usando o plugin do Maven (ou chat GPT):
 
-![Image-04-UML-Classes-Country-Currency](images/Image-04-UML-Classes-Country-Currency.png)
+![Image-04-UML-Classes-Country-Currency-Request-Response](images/Image-04-UML-Classes-Country-Currency-Request-Response.png)
 
 5. Criar class `CountryInMemoryRepository`:
 - com o atributo estático `countriesMap`;

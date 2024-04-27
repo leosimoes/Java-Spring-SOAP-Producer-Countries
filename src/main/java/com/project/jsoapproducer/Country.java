@@ -4,6 +4,8 @@ import jakarta.xml.bind.annotation.*;
 import lombok.Builder;
 import lombok.Data;
 
+@Data
+@Builder
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
         "name",
@@ -11,9 +13,6 @@ import lombok.Data;
         "capital",
         "currency"
 })
-
-@Data
-@Builder
 @XmlRootElement(name = "country")
 public class Country {
 
