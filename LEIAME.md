@@ -76,6 +76,15 @@ As etapas de desenvolvimento do projeto foram:
 
 ![Image-05-UML-Class-CountryInMemoryRepository](images/Image-05-UML-Class-CountryInMemoryRepository.png)
 
+6. Criar class `CountryEndpoint`:
+- com o atributo estático `NAMESPACE_URI`;
+- com o atributo `CountryInMemoryRepository`inicializado no construtor que é anotado com `@Autowired`;
+- com o método `getCountry`:
+  * anotado com `@PayloadRoot` e `@ResponsePayload`;
+  * com argumento `getCountryRequest` anotado com `RequestPayload`.
+
+![Image-06-UML-Classes-CountryEndpoint](images/Image-06-UML-Classes-CountryEndpoint.png)
+
 
 ## Referências
 Spring - Guides - Producing a SOAP web service:
