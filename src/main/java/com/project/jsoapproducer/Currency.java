@@ -6,9 +6,9 @@ import jakarta.xml.bind.annotation.*;
 @XmlEnum
 public enum Currency {
 
-    GBP("GBP"),
+    CAD("CAD"),
     EUR("EUR"),
-    PLN("PLN");
+    BRL("BRL");
 
     private final String value;
 

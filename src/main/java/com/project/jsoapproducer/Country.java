@@ -1,6 +1,7 @@
 package com.project.jsoapproducer;
 
 import jakarta.xml.bind.annotation.*;
+import lombok.Builder;
 import lombok.Data;
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -12,6 +13,7 @@ import lombok.Data;
 })
 
 @Data
+@Builder
 @XmlRootElement(name = "country")
 public class Country {
 
