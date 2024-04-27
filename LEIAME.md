@@ -1,6 +1,13 @@
 # Spring - SOAP Producer - Countries
 Autor: Leonardo Simões
 
+A URI do Namespace deve ser a mesma para:
+- os campos `xmlns:tns` e `targetNamespace` de `countries.xsd`;
+- o atributo `NAMESPACE_URI` em `CountryEndpoint`;
+- o parâmetro de `wsdl11Definition.setTargetNamespace` dentro do método `defaultWsdl11Definition` de `WebServiceConfig`;
+
+![Image-08-UML-Classes-All](images/Image-08-UML-Classes-All.png)
+
 
 ## Etapas do desenvolvimento
 As etapas de desenvolvimento do projeto foram:
@@ -84,6 +91,13 @@ As etapas de desenvolvimento do projeto foram:
   * com argumento `getCountryRequest` anotado com `RequestPayload`.
 
 ![Image-06-UML-Classes-CountryEndpoint](images/Image-06-UML-Classes-CountryEndpoint.png)
+
+7. Criar class `WebServiceConfig`:
+- extends `WsConfigurerAdapter`;
+- anotada com `@EnableWs` e `@Configuration`;
+- com os 3 métodos anotados com `@Bean`.
+
+![Image-07-UML-Class-WebServiceConfig](images/Image-07-UML-Class-WebServiceConfig.png)
 
 
 ## Referências
