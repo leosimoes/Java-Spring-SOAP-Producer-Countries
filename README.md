@@ -8,6 +8,7 @@ The Namespace URI must be the same for:
 
 ![Image-08-UML-Classes-All](images/Image-08-UML-Classes-All.png)
 
+
 ## Development steps
 The steps of project implementation:
 
@@ -95,6 +96,8 @@ The steps of project implementation:
 - extends `WsConfigurerAdapter`;
 - annotated with `@EnableWs` and `@Configuration`;
 - with the 3 methods annotated with `@Bean`.
+
+![Image-07-UML-Class-WebServiceConfig](images/Image-07-UML-Class-WebServiceConfig.png)
 
 
 ## References
