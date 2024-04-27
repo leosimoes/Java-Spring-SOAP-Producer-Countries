@@ -69,6 +69,13 @@ The steps of project implementation:
 
 ![Image-04-UML-Classes-Country-Currency](images/Image-04-UML-Classes-Country-Currency.png)
 
+5. Create class `CountryInMemoryRepository`:
+- with the static attribute `countriesMap`;
+- with the `initData()` method annotated with `@PostConstruct` to initialize `countriesMap`;
+- with the `findCountry(String name)` method.
+
+![Image-05-UML-Class-CountryInMemoryRepository](images/Image-05-UML-Class-CountryInMemoryRepository.png)
+
 
 ## References
 Spring - Guides - Producing a SOAP web service:

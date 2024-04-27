@@ -69,6 +69,13 @@ As etapas de desenvolvimento do projeto foram:
 
 ![Image-04-UML-Classes-Country-Currency](images/Image-04-UML-Classes-Country-Currency.png)
 
+5. Criar class `CountryInMemoryRepository`:
+- com o atributo estático `countriesMap`;
+- com o método `initData()` anotado com `@PostConstruct` para inicializar `countriesMap`;
+- com o método `findCountry(String name)`.
+
+![Image-05-UML-Class-CountryInMemoryRepository](images/Image-05-UML-Class-CountryInMemoryRepository.png)
+
 
 ## Referências
 Spring - Guides - Producing a SOAP web service:
