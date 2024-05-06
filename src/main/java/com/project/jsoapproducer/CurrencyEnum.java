@@ -2,9 +2,7 @@ package com.project.jsoapproducer;
 
 import jakarta.xml.bind.annotation.*;
 
-@XmlType(name = "currency")
-@XmlEnum
-public enum Currency {
+public enum CurrencyEnum {
 
     CAD("CAD"),
     EUR("EUR"),
@@ -12,7 +10,7 @@ public enum Currency {
 
     private final String value;
 
-    Currency(String v) {
+    CurrencyEnum(String v) {
         value = v;
     }
 
@@ -20,8 +18,8 @@ public enum Currency {
         return value;
     }
 
-    public static Currency fromValue(String v) {
-        for (Currency c: Currency.values()) {
+    public static CurrencyEnum fromValue(String v) {
+        for (CurrencyEnum c: CurrencyEnum.values()) {
             if (c.value.equals(v)) {
                 return c;
             }

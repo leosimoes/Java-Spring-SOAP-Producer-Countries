@@ -76,14 +76,14 @@ As etapas de desenvolvimento do projeto foram:
 
 ![Image-04-UML-Classes-Country-Currency-Request-Response](images/Image-04-UML-Classes-Country-Currency-Request-Response.png)
 
-5. Criar class `CountryInMemoryRepository`:
+5. Criar classe `CountryInMemoryRepository`:
 - com o atributo estático `countriesMap`;
 - com o método `initData()` anotado com `@PostConstruct` para inicializar `countriesMap`;
 - com o método `findCountry(String name)`.
 
 ![Image-05-UML-Class-CountryInMemoryRepository](images/Image-05-UML-Class-CountryInMemoryRepository.png)
 
-6. Criar class `CountryEndpoint`:
+6. Criar classe `CountryEndpoint`:
 - com o atributo estático `NAMESPACE_URI`;
 - com o atributo `CountryInMemoryRepository`inicializado no construtor que é anotado com `@Autowired`;
 - com o método `getCountry`:
@@ -92,12 +92,23 @@ As etapas de desenvolvimento do projeto foram:
 
 ![Image-06-UML-Classes-CountryEndpoint](images/Image-06-UML-Classes-CountryEndpoint.png)
 
-7. Criar class `WebServiceConfig`:
+7. Criar classe `WebServiceConfig`:
 - extends `WsConfigurerAdapter`;
 - anotada com `@EnableWs` e `@Configuration`;
 - com os 3 métodos anotados com `@Bean`.
 
 ![Image-07-UML-Class-WebServiceConfig](images/Image-07-UML-Class-WebServiceConfig.png)
+
+8. Alterar URI do Namespace para `"http://spring.io/guides/gs-producing-web-service"` em:
+- campos `xmlns:tns` e `targetNamespace` de `countries.xsd`;
+- atributo `NAMESPACE_URI` em `CountryEndpoint`;
+- parâmetro de `wsdl11Definition.setTargetNamespace` dentro do método `defaultWsdl11Definition` de `WebServiceConfig`;
+
+9. Refatorar o código para cumprir o contrato SOAP
+- excluir manualmente as classes `GetCountryRequest` e `GetCountryResponse`, que também foram geradas manualmente.
+- separar a classe `Country` em `Country`(gerada automaticamente) e `CountryEntity`;
+- criar a clase `CountryMapper` para converter de `CountryEntity` para `Country`;
+- alterar a classe `CountryEndpoint` para usar as versões de `GetCountryRequest` e `GetCountryResponse` geradas automaticamente.
 
 
 ## Referências

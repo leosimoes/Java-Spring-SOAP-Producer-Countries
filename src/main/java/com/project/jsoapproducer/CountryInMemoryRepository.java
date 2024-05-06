@@ -10,42 +10,42 @@ import java.util.Map;
 @Component
 public class CountryInMemoryRepository {
 
-    private static final Map<String, Country> countriesMap = new HashMap<>();
+    private static final Map<String, CountryEntity> countriesMap = new HashMap<>();
 
     @PostConstruct
     public void initData(){
-        Country brazil = Country
+        CountryEntity brazil = CountryEntity
                 .builder()
                 .name("Brazil")
                 .capital("Brasilia")
-                .currency(Currency.BRL)
+                .currency(CurrencyEnum.BRL)
                 .population(217418169)
                 .build();
 
         CountryInMemoryRepository.countriesMap.put(brazil.getName(), brazil);
 
-        Country portugal = Country
+        CountryEntity portugal = CountryEntity
                 .builder()
                 .name("Portugal")
                 .capital("Lisbon")
-                .currency(Currency.EUR)
+                .currency(CurrencyEnum.EUR)
                 .population(10227645)
                 .build();
 
         CountryInMemoryRepository.countriesMap.put(portugal.getName(), portugal);
 
-        Country canada = Country
+        CountryEntity canada = CountryEntity
                 .builder()
                 .name("Canada")
                 .capital("Ottawa")
-                .currency(Currency.CAD)
+                .currency(CurrencyEnum.CAD)
                 .population(39049558)
                 .build();
 
         CountryInMemoryRepository.countriesMap.put(canada.getName(), canada);
     }
 
-    public Country findCountry(String name) {
+    public CountryEntity findCountry(String name) {
         Assert.notNull(name, "The country's name must not be null");
         return CountryInMemoryRepository.countriesMap.get(name);
     }

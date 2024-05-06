@@ -1,5 +1,8 @@
 package com.project.jsoapproducer;
 
+import io.spring.guides.gs_producing_web_service.Country;
+import io.spring.guides.gs_producing_web_service.GetCountryRequest;
+import io.spring.guides.gs_producing_web_service.GetCountryResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -9,7 +12,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 @Endpoint
 public class CountryEndpoint {
 
-    private final static String NAMESPACE_URI = "http://project.com/schema";
+    private final static String NAMESPACE_URI = "http://spring.io/guides/gs-producing-web-service";
 
     private final CountryInMemoryRepository countryInMemoryRepository;
 
@@ -21,9 +24,13 @@ public class CountryEndpoint {
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCountryRequest")
     @ResponsePayload
     public GetCountryResponse getCountry(@RequestPayload GetCountryRequest getCountryRequest){
-        Country country = countryInMemoryRepository.findCountry(getCountryRequest.getName());
+        CountryEntity countryEntity = countryInMemoryRepository.findCountry(getCountryRequest.getName());
+        Country countrySOAP = CountryMapper.toCountrySOAP(countryEntity);
 
-        return new GetCountryResponse(country);
+        GetCountryResponse response = new GetCountryResponse();
+        response.setCountry(countrySOAP);
+
+        return response;
     }
 
 }

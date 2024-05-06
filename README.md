@@ -99,6 +99,17 @@ The steps of project implementation:
 
 ![Image-07-UML-Class-WebServiceConfig](images/Image-07-UML-Class-WebServiceConfig.png)
 
+8. Change Namespace URI to `"http://spring.io/guides/gs-producing-web-service"` at:
+- `xmlns:tns` and `targetNamespace` fields from `countries.xsd`;
+- `NAMESPACE_URI` attribute in `CountryEndpoint`;
+- `wsdl11Definition.setTargetNamespace` parameter within the `defaultWsdl11Definition` method of `WebServiceConfig`;
+
+9. Refactor the code to comply with the SOAP contract
+- manually delete the `GetCountryRequest` and `GetCountryResponse` classes, which were also generated manually.
+- separate the `Country` class into `Country` (automatically generated) and `CountryEntity`;
+- create the `CountryMapper` class to convert from `CountryEntity` to `Country`;
+- change the `CountryEndpoint` class to use the automatically generated versions of `GetCountryRequest` and `GetCountryResponse`.
+
 
 ## References
 Spring - Guides - Producing a SOAP web service:
