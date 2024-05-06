@@ -110,6 +110,25 @@ The steps of project implementation:
 - create the `CountryMapper` class to convert from `CountryEntity` to `Country`;
 - change the `CountryEndpoint` class to use the automatically generated versions of `GetCountryRequest` and `GetCountryResponse`.
 
+10. Test the application with POSTMAN:
+- HTTP POST request;
+- with URI `http://localhost:8080/ws`;
+- the body content must be RAW/XML:
+
+```xml
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+				  xmlns:gs="http://spring.io/guides/gs-producing-web-service">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gs:getCountryRequest>
+         <gs:name>Portugal</gs:name>
+      </gs:getCountryRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
+```
+
+![Image-09-Postman-01](images/Image-09-Postman-01.png)
+
 
 ## References
 Spring - Guides - Producing a SOAP web service:
